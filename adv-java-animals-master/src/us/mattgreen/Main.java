@@ -9,7 +9,7 @@ Using IntelliJ, clone the repository at https://github.com/oroborous/adv-java-an
 
 Run the program. What does it do?
 
-Using IntelliJ, create a repository in your GitHub  that contains the project
+Using IntelliJ, create a repository in youre GitHub  that contains the project
 
 Part 2
 In your project, create a class that does the following:
@@ -17,6 +17,7 @@ In your project, create a class that does the following:
 Ask the user what type of animal they want to create
 Accept the input(s) necessary to instantiate that type of object
 Create an object of that type
+
 Add the object to the ArrayList
 Hint: Pass the list to the user input-gathering object.
 
@@ -35,10 +36,21 @@ Use that object to add an object to the list*/
     public static void main(String[] args) {
         ArrayList<Talkable> zoo = new ArrayList<>();
 
+        Animal teacher  = new Animal();
+        Animal cat  = new Animal();
+        Animal dog  = new Animal();
+        dog.create();
+        cat.create();
+        teacher.create();
+
+
+
         // Lines to Replace Begin Here
-        zoo.add(new Dog(true, "Bean"));
-        zoo.add(new Cat(9, "Charlie"));
-        zoo.add(new Teacher(44, "Stacy Read"));
+        try {
+            zoo.add(dog);
+            zoo.add(cat);
+            zoo.add(teacher);
+        } catch (NullPointerException ex){}
         // End Lines to Replace
 
         for (Talkable thing : zoo) {
